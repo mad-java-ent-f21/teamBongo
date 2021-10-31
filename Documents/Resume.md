@@ -1,6 +1,16 @@
 #Team Bongo Resume
 
 ### Matthew Priebe
+* Good at getting along
+* Can manage projects
+* Is Organized
+* Punctual
+* Has experience using APIs with PHP project
+* Has hired people
+* Can handle criticism
+* Flexible
+* Amenable
+* Reasonable
 
 ### Frank Raisbeck
 * A good listener
