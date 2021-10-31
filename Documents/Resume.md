@@ -1,4 +1,4 @@
-#Team Bongo Resume
+# Team Bongo Resume
 
 ### Matthew Priebe
 * Good at getting along
