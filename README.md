@@ -27,6 +27,7 @@ This service will do the following:
 | IDE | IntelliJ IDEA |
 | VCS | Git |
 |HTML Parser | Jsoup  | 
+
 ## Team Docs 
 - [Link to Team Charter](https://github.com/mad-java-ent-f21/teamBongo/blob/main/Documents/Charter.md)
 - [Link to Team Resume](https://github.com/mad-java-ent-f21/teamBongo/blob/main/Documents/Resume.md)
