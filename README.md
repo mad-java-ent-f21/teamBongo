@@ -15,7 +15,19 @@ This service will do the following:
 - Get a list of recipes based on preptime.
 
 ## Technologies Used
-JSoup
+
+| Name  | Technology    |
+|-----------|-----------|
+| Security/Authentication | Spring Security & JSON Web Token |
+| Database | MySQL 8 |
+| ORM Framework | Hibernate 5 |
+| Dependency Management | Maven 3 |
+| Logging | Log4J2 |
+| Hosting | AWS Elastic Beanstalk |
+| Unit Testing | JUnit 5 tests |
+| IDE | IntelliJ IDEA |
+| VCS | Git |
+|HTML Parser | Jsoup  | 
 
 
 ## Resources
@@ -30,10 +42,8 @@ JSoup
 | ingredients | Ingredients in recipe | Array of Strings |
 | steps | Steps/ instructions to make recipe | Array of Strings |
 
-
-
 ## Team Docs 
-- Link to Team Charter
-- Link to Team Resume
+- [Link to Team Charter](https://github.com/mad-java-ent-f21/teamBongo/blob/main/Documents/Charter.md)
+- [Link to Team Resume](https://github.com/mad-java-ent-f21/teamBongo/blob/main/Documents/Resume.md)
 - Link to Design Documents
 - Other Links
