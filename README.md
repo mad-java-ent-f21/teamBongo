@@ -29,9 +29,6 @@ This service will do the following:
 | VCS | Git |
 |HTML Parser | Jsoup  | 
 
-<<<<<<< HEAD
-=======
-
 ## Resources
 **Recipe**
 
@@ -44,7 +41,6 @@ This service will do the following:
 | ingredients | Ingredients in recipe | Array of Strings |
 | steps | Steps/ instructions to make recipe | Array of Strings |
 
->>>>>>> a1952ddea720728be47786ecdc724e8ccb000a12
 ## Team Docs 
 - [Link to Team Charter](https://github.com/mad-java-ent-f21/teamBongo/blob/main/Documents/Charter.md)
 - [Link to Team Resume](https://github.com/mad-java-ent-f21/teamBongo/blob/main/Documents/Resume.md)
