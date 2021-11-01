@@ -23,4 +23,15 @@
 * Has had to hire / fire someone
 * A good speaker
 * Is organized
+
 ### Boulder Beeman
+* Experience managing projects
+* Can take criticism constructively
+* Willingness to learn
+* Experience using APIs with Javascript
+* Interpersonal Communication
+* Time Management
+* UI/UX design experience
+* Willingness to help others with their work
+* Teamwork
+* Collaboration
