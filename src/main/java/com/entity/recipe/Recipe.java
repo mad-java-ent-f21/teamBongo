@@ -12,17 +12,23 @@ public class Recipe {
     @JsonProperty("name")
     private String name;
 
-    @JsonProperty("serving_size")
-    private String servingSize;
+    @JsonProperty("category")
+    private String category;
 
-    @JsonProperty("time")
-    private Double time;
+    @JsonProperty("yield")
+    private String yield;
+
+    @JsonProperty("prep_time")
+    private int prepTime;
+
+    @JsonProperty("cook_time")
+    private int cookTime;
 
     @JsonProperty("ingredients")
-    private List<String> ingredients;
+    private Ingredients ingredients;
 
     @JsonProperty("steps")
-    private List<String> steps;
+    private Steps steps;
 
     //ID: GET and SET
     public void setId(int id) {
@@ -42,39 +48,49 @@ public class Recipe {
         return this.name;
     }
 
+    //CATEGORY: GET and SET
+    public void setCategory(String category) { this.category = category; }
+
+    public String getCategory() { return this.category; }
+
     //SERVING SIZE: GET and SET
-    public void setServingSize(String servingSize) {
-        this.servingSize = servingSize;
+    public void setYield(String servingSize) {
+        this.yield = servingSize;
     }
 
-    public String getServingSize() {
-        return this.servingSize;
+    public String getYield() {
+        return this.yield;
     }
 
-    //TIME: GET and SET
-    public void setTime(Double time) {
-        this.time = time;
+    //PREP_TIME: GET and SET
+    public void setPrepTime(int prepTime) {
+        this.prepTime = prepTime;
     }
 
-    public Double getTime() {
-        return this.time;
+    public int getPrepTime() {
+        return this.prepTime;
     }
+
+    //COOK_TIME: GET and SET
+    public void setCookTime(int cookTime) { this.cookTime = cookTime; }
+
+    public int getCookTime() { return cookTime; }
 
     //INGREDIENTS: GET and SET
-    public void setIngredients(List<String> ingredients) {
+    public void setIngredients(Ingredients ingredients) {
         this.ingredients = ingredients;
     }
 
-    public List<String> getIngredients() {
+    public Ingredients getIngredients() {
         return this.ingredients;
     }
 
     //STEPS: GET and SET
-    public void setSteps(List<String> steps) {
+    public void setSteps(Steps steps) {
         this.steps = steps;
     }
 
-    public List<String> getSteps() {
+    public Steps getSteps() {
         return this.steps;
     }
 
@@ -84,8 +100,10 @@ public class Recipe {
                 "Recipe{" +
                         "id = '" + id + '\'' +
                         ",name = '" + name + '\'' +
-                        ",serving_size = '" + servingSize + '\'' +
-                        ",time = '" + time + '\'' +
+                        ",category = '" + category + '\'' +
+                        ",yield = '" + yield + '\'' +
+                        ",prep_time = '" + prepTime + '\'' +
+                        ",cook_time = '" + cookTime + '\'' +
                         ",ingredients = '" + ingredients + '\'' +
                         ",steps = '" + steps + '\'' +
                         "}";

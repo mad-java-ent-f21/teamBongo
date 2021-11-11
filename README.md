@@ -7,7 +7,7 @@ about stories from the author's childhood, ads, popups and everthing else, getti
 straight up hassle. This project plans to use Jsoup in order to scrape and parse a popular
 recipe site and provide only relevant data in the form of an api. 
 
-Website Chosen:  damndelicious.net
+Website Chosen: [damndelicouse.net](damndelicious.net)
 
 This service will do the following:
 - Get a single recipe in the form of JSON.
