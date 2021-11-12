@@ -17,7 +17,7 @@ public class RecipeScrape {
 
     public ArrayList<String> scrapeIngredients() {
 
-        String url = "https://damndelicious.net/2020/09/19/pumpkin-chocolate-chip-pancakes/print/";
+        String url = "https://damndelicious.net/2021/10/21/pumpkin-donut-holes/print/";
 
         ArrayList<String> ingredientList = new ArrayList();
 
