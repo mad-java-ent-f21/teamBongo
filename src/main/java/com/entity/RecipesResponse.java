@@ -13,9 +13,14 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.util.RecipeGenerator;
 
 
-@Path("/recipes")
-public class Recipes {
-    // The Java method will process HTTP GET requests
+@Path("categories/recipes")
+public class RecipesResponse {
+    /**
+     * The Java method will return a response from an HTTP GET request set to the /recipes path
+     * @return Response object
+     * @throws JsonProcessingException
+     **/
+
     @GET
     @Produces("text/plain")
     public Response getRecipe() throws JsonProcessingException {

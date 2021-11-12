@@ -1,5 +1,8 @@
 package com.persistence;
 
+import com.entity.categories.Categories;
+import com.entity.categories.Category;
+import com.entity.recipe.Recipe;
 import junit.framework.TestCase;
 import lombok.extern.log4j.Log4j2;
 import org.junit.Test;
@@ -23,4 +26,30 @@ public class RecipeScrapeTest {
         }
     }
 
+    @Test
+    public void scrapeAllCategoriesTest() {
+        RecipeScrape categories = new RecipeScrape();
+
+        Categories results;
+
+        results = categories.scrapeAllCategories();
+
+        for (Category item : results.getCategoriesItems()) {
+            log.info(item);
+        }
+
+    }
+
+    @Test
+    public void scrapeByCategoryName() {
+        RecipeScrape scraper = new RecipeScrape();
+
+        Category results;
+
+        results = scraper.scrapeByCategoryName("asian-inspired");
+
+        for (Recipe item : results.getRecipes()) {
+            log.info(item);
+        }
+    }
 }
