@@ -5,8 +5,8 @@ import javax.ws.rs.core.Application;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.entity.Categories;
-import com.entity.Recipes;
+import com.entity.CategoriesResponse;
+import com.entity.RecipesResponse;
 
 //Defines the base URI for all resource URIs.
 @ApplicationPath("/services") //You may want to add a value here so that all traffic isn't routed to the class below.
@@ -18,8 +18,8 @@ public class WebService extends Application {
     @Override
     public Set<Class<?>> getClasses() {
         HashSet h = new HashSet<Class<?>>();
-        h.add(Recipes.class);
-        h.add(Categories.class);
+        h.add(RecipesResponse.class);
+        h.add(CategoriesResponse.class);
         return h;
     }
 }

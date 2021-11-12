@@ -1,4 +1,4 @@
-package com.entity.category;
+package com.entity.categories;
 
 
 import java.util.List;
