@@ -55,8 +55,8 @@ public class RecipeGenerator {
         recipe1.setName("Instant Pot Chicken Nachos");
         recipe1.setCategory("Appetizers");
         recipe1.setYield("8 servings");
-        recipe1.setPrepTime(20);
-        recipe1.setCookTime(60);
+        recipe1.setPrepTime("20 Minutes");
+        recipe1.setCookTime("60 Minutes");
         recipe1.setIngredients(ingredient1);
         recipe1.setSteps(step1);
 
@@ -98,8 +98,8 @@ public class RecipeGenerator {
         recipe2.setName("HONEY LIME SHRIMP");
         recipe2.setCategory("Appetizers");
         recipe2.setYield("4 SERVINGS");
-        recipe2.setPrepTime(10);
-        recipe2.setCookTime(10);
+        recipe2.setPrepTime("10 Minutes");
+        recipe2.setCookTime("10 Minutes");
         recipe2.setIngredients(ingredient2);
         recipe2.setSteps(step2);
 
@@ -142,8 +142,8 @@ public class RecipeGenerator {
         recipe3.setName("PUMPKIN DONUT HOLES");
         recipe2.setCategory("Breakfast");
         recipe3.setYield("24 MINI MUFFINS");
-        recipe3.setPrepTime(20);
-        recipe3.setCookTime(15);
+        recipe3.setPrepTime("20 Minutes");
+        recipe3.setCookTime("15 Minutes");
         recipe3.setIngredients(ingredient3);
         recipe3.setSteps(step3);
 

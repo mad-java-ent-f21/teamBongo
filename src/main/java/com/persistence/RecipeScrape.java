@@ -15,6 +15,38 @@ import java.util.List;
 public class RecipeScrape {
 
     /**
+     *
+     *
+     */
+    public String titleScrape() {
+
+        String url = "https://damndelicious.net/2021/10/21/pumpkin-donut-holes/print/";
+
+        String name = "";
+        String yield = "";
+        String prepTime = "";
+        String cookTime = "";
+
+        try {
+            final Document recipePage = Jsoup.connect(url).get();
+
+            for (Element titleItem : recipePage.select("div.recipe-title")) {
+                name = titleItem.select("h2").text();
+            }
+
+            for (Element titleItem : recipePage.select("div.post-meta.time")) {
+                yield = titleItem.select("p").text();
+            }
+
+        } catch (Exception ex){
+            log.error(ex);
+        }
+        return yield;
+    }
+
+
+
+    /**
      * This class scrapes the ingredients and enters them into a list.
      * @return ingredients
      */
@@ -24,8 +56,6 @@ public class RecipeScrape {
         String url = "https://damndelicious.net/2021/10/21/pumpkin-donut-holes/print/";
 
         ArrayList<String> ingredientList = new ArrayList();
-
-        int counter = 0;
 
         try {
             final Document recipePage = Jsoup.connect(url).get();
@@ -48,6 +78,10 @@ public class RecipeScrape {
         return ingredientList;
     }
 
+    /**
+     *
+     * @return
+     */
     public Categories scrapeAllCategories() {
         String url = "https://damndelicious.net/recipe-index/";
 
@@ -76,6 +110,11 @@ public class RecipeScrape {
         return categories;
     }
 
+    /**
+     *
+     * @param categoryNameParam
+     * @return
+     */
     public Category scrapeByCategoryName(String categoryNameParam) {
         String url = "https://damndelicious.net/category/" + categoryNameParam + "/";
 

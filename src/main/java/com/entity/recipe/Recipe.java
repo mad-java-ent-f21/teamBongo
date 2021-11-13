@@ -19,10 +19,10 @@ public class Recipe {
     private String yield;
 
     @JsonProperty("prep_time")
-    private int prepTime;
+    private String prepTime;
 
     @JsonProperty("cook_time")
-    private int cookTime;
+    private String cookTime;
 
     @JsonProperty("ingredients")
     private Ingredients ingredients;
@@ -63,18 +63,18 @@ public class Recipe {
     }
 
     //PREP_TIME: GET and SET
-    public void setPrepTime(int prepTime) {
+    public void setPrepTime(String prepTime) {
         this.prepTime = prepTime;
     }
 
-    public int getPrepTime() {
+    public String getPrepTime() {
         return this.prepTime;
     }
 
     //COOK_TIME: GET and SET
-    public void setCookTime(int cookTime) { this.cookTime = cookTime; }
+    public void setCookTime(String cookTime) { this.cookTime = cookTime; }
 
-    public int getCookTime() { return cookTime; }
+    public String getCookTime() { return cookTime; }
 
     //INGREDIENTS: GET and SET
     public void setIngredients(Ingredients ingredients) {

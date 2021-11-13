@@ -13,6 +13,16 @@ import java.util.ArrayList;
 public class RecipeScrapeTest {
 
     @Test
+    public void scrapeTitleCard() {
+        RecipeScrape recipe = new RecipeScrape();
+        String results;
+
+        results = recipe.titleScrape();
+
+        log.info(results);
+    }
+
+    @Test
     public void getIngredients() {
 
         RecipeScrape recipe = new RecipeScrape();
