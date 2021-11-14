@@ -14,12 +14,14 @@ public class RecipeScrapeTest {
 
     @Test
     public void scrapeTitleCard() {
-        RecipeScrape recipe = new RecipeScrape();
-        String results;
+        RecipeScrape recipeScrape = new RecipeScrape();
+        ArrayList<String> titleList = new ArrayList<>();
 
-        results = recipe.titleScrape();
+        titleList = recipeScrape.titleScrape();
 
-        log.info(results);
+        for (String item : titleList) {
+            log.info(item);
+        }
     }
 
     @Test

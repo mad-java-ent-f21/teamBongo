@@ -18,11 +18,12 @@ public class RecipeScrape {
      *
      *
      */
-    public String titleScrape() {
+    public ArrayList<String> titleScrape() {
 
         String url = "https://damndelicious.net/2021/10/21/pumpkin-donut-holes/print/";
 
         String name = "";
+        ArrayList<String> titleList = new ArrayList();
         String yield = "";
         String prepTime = "";
         String cookTime = "";
@@ -34,14 +35,17 @@ public class RecipeScrape {
                 name = titleItem.select("h2").text();
             }
 
-            for (Element titleItem : recipePage.select("div.post-meta.time")) {
-                yield = titleItem.select("p").text();
+            for (Element titleItem : recipePage.select("div.post-meta.time p")) {
+                titleList.add(titleItem.select("span").text());
             }
 
         } catch (Exception ex){
             log.error(ex);
         }
-        return yield;
+
+        titleList.add(0, name);
+
+        return titleList;
     }
 
 
