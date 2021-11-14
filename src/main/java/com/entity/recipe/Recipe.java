@@ -99,13 +99,13 @@ public class Recipe {
         return
                 "Recipe{" +
                         "id = '" + id + '\'' +
-                        ",name = '" + name + '\'' +
-                        ",category = '" + category + '\'' +
-                        ",yield = '" + yield + '\'' +
-                        ",prep_time = '" + prepTime + '\'' +
-                        ",cook_time = '" + cookTime + '\'' +
-                        ",ingredients = '" + ingredients + '\'' +
-                        ",steps = '" + steps + '\'' +
+                        " ,name = '" + name + '\'' +
+                        " ,category = '" + category + '\'' +
+                        " ,yield = '" + yield + '\'' +
+                        " ,prep_time = '" + prepTime + '\'' +
+                        " ,cook_time = '" + cookTime + '\'' +
+                        " ,ingredients = '" + ingredients.getIngredientItems() + '\'' +
+                        " ,steps = '" + steps.getStepsItems() + '\'' +
                         "}";
     }
 }

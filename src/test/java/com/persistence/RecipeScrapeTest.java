@@ -13,25 +13,39 @@ import java.util.ArrayList;
 public class RecipeScrapeTest {
 
     @Test
-    public void scrapeTitleCard() {
+    public void scrapeRecipe() {
         RecipeScrape recipeScrape = new RecipeScrape();
-        ArrayList<String> titleList = new ArrayList<>();
 
-        titleList = recipeScrape.scrapeTitleInfo();
+        Recipe recipe = new Recipe();
 
-        for (String item : titleList) {
-            log.info(item);
-        }
+        recipe = recipeScrape.scrapeRecipe("https://damndelicious.net/2021/10/16/thai-coconut-curry-ramen/print/");
+
+        log.info(recipe);
     }
 
     @Test
-    public void getIngredients() {
+    public void scrapeStepsTest() {
 
         RecipeScrape recipe = new RecipeScrape();
 
         ArrayList<String> results;
 
-        results = recipe.scrapeIngredients();
+        results = recipe.scrapeSteps("https://damndelicious.net/2021/10/16/thai-coconut-curry-ramen/print/");
+
+        for (String item: results) {
+            log.info(item);
+        }
+    }
+
+
+    @Test
+    public void scrapeIngredientsTest() {
+
+        RecipeScrape recipe = new RecipeScrape();
+
+        ArrayList<String> results;
+
+        results = recipe.scrapeIngredients("https://damndelicious.net/2021/10/16/thai-coconut-curry-ramen/print/");
 
         for (String item: results) {
             log.info(item);
@@ -58,7 +72,7 @@ public class RecipeScrapeTest {
 
         Category results;
 
-        results = scraper.scrapeByCategoryName("https://damndelicious.net/category/asian-inspired/" ,"asian-inspired");
+        results = scraper.scrapeByCategoryName("https://damndelicious.net/category/asian-inspired/page/2" ,"asian-inspired");
 
         for (Recipe item : results.getRecipes()) {
             log.info(item);

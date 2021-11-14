@@ -2,6 +2,8 @@ package com.persistence;
 
 import com.entity.categories.Categories;
 import com.entity.categories.Category;
+import com.entity.recipe.Ingredients;
+import com.entity.recipe.Steps;
 import com.entity.recipe.Recipe;
 import lombok.extern.log4j.Log4j2;
 import org.jsoup.Jsoup;
@@ -9,7 +11,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 import java.util.ArrayList;
-import java.util.List;
 
 @Log4j2
 public class RecipeScrape {
@@ -18,12 +19,14 @@ public class RecipeScrape {
      *
      *
      */
-    public ArrayList<String> scrapeTitleInfo() {
+    public Recipe scrapeRecipe(String url) {
 
-        String url = "https://damndelicious.net/2021/10/21/pumpkin-donut-holes/print/";
+        url = url + "/print/";
 
-        String name = "";
         ArrayList<String> titleList = new ArrayList();
+        ArrayList<String> ingredientsArrayList = new ArrayList<>();
+        ArrayList<String> stepsArrayList = new ArrayList<>();
+        String name = "";
         String yield = "";
         String prepTime = "";
         String cookTime = "";
@@ -43,9 +46,25 @@ public class RecipeScrape {
             log.error(ex);
         }
 
-        titleList.add(0, name);
+        Recipe recipe = new Recipe();
+        Ingredients ingredients = new Ingredients();
+        Steps steps = new Steps();
 
-        return titleList;
+        ingredientsArrayList = this.scrapeIngredients(url);
+        ingredients.setIngredientItems(ingredientsArrayList);
+
+        stepsArrayList = this.scrapeSteps(url);
+        steps.setStepsItems(stepsArrayList);
+
+        recipe.setName(name);
+        recipe.setYield(titleList.get(0));
+        recipe.setPrepTime(titleList.get(1));
+        recipe.setCookTime(titleList.get(2));
+        recipe.setIngredients(ingredients);
+        recipe.setSteps(steps);
+
+        return recipe;
+
     }
 
     /**
@@ -53,11 +72,9 @@ public class RecipeScrape {
      * @return ingredients
      */
 
-    public ArrayList<String> scrapeIngredients() {
+    public ArrayList<String> scrapeIngredients(String url) {
 
-        String url = "https://damndelicious.net/2021/10/21/pumpkin-donut-holes/print/";
-
-        ArrayList<String> ingredientList = new ArrayList();
+        ArrayList<String> ingredientItems = new ArrayList();
 
         try {
             final Document recipePage = Jsoup.connect(url).get();
@@ -67,9 +84,7 @@ public class RecipeScrape {
                     continue;
                 }
                 else {
-                    //String ingredient = item.select("li:nth-of-type(1)").text();
-
-                    ingredientList.add(item.text());
+                    ingredientItems.add(item.text());
                 }
             }
         }
@@ -77,7 +92,32 @@ public class RecipeScrape {
             log.error(ex);
         }
 
-        return ingredientList;
+        return ingredientItems;
+    }
+
+    /**
+     *
+     *
+     */
+    public ArrayList<String> scrapeSteps(String url) {
+        ArrayList<String> stepItems = new ArrayList();
+
+        try {
+            final Document recipePage = Jsoup.connect(url).get();
+
+            for (Element item : recipePage.select("div.instructions ol li")) {
+                if (item.text().equals("")) {
+                    continue;
+                }
+                else {
+                    stepItems.add(item.text());
+                }
+            }
+        }
+        catch (Exception ex) {
+            log.error(ex);
+        }
+        return stepItems;
     }
 
     /**
@@ -141,10 +181,8 @@ public class RecipeScrape {
                     //Recipe Link
                     String urlToEachRecipe = item.attr("abs:href");
 
-                    log.info("\n\nName: " + recipeName + " ---- url: " + urlToEachRecipe);
+                    Recipe recipe = scrapeRecipe(urlToEachRecipe);
 
-                    Recipe recipe = new Recipe();
-                    recipe.setName(item.text());
                     recipeList.add(recipe);
                 }
             }
