@@ -18,7 +18,7 @@ public class RecipeScrape {
      *
      *
      */
-    public ArrayList<String> titleScrape() {
+    public ArrayList<String> scrapeTitleInfo() {
 
         String url = "https://damndelicious.net/2021/10/21/pumpkin-donut-holes/print/";
 
@@ -48,8 +48,6 @@ public class RecipeScrape {
         return titleList;
     }
 
-
-
     /**
      * This class scrapes the ingredients and enters them into a list.
      * @return ingredients
@@ -69,7 +67,7 @@ public class RecipeScrape {
                     continue;
                 }
                 else {
-                    String ingredient = item.select("li:nth-of-type(1)").text();
+                    //String ingredient = item.select("li:nth-of-type(1)").text();
 
                     ingredientList.add(item.text());
                 }
@@ -95,20 +93,25 @@ public class RecipeScrape {
         try {
             final Document categoryIndexPage = Jsoup.connect(url).get();
 
-            for (Element item : categoryIndexPage.select("div.archive-post")) {
+            for (Element item : categoryIndexPage.select("div.archive-post a")) {
                 if (item.text().equals("")) {
                     continue;
                 } else {
-                    
-                    String formattedText = item.text().replace(" ", "-");
-                    Category category = scrapeByCategoryName(formattedText);
+                    //Gets the name for each category
+                    String catergoryName = item.select("h4.title").text();
+
+                    //Gets the URL to each category
+                    String urlToEachCategory = item.attr("abs:href");
+
+                    //Calls the method that crapes the index of the individual Catergories.
+                    Category category = scrapeByCategoryName(urlToEachCategory, catergoryName);
+
                     categoriesList.add(category);
                 }
             }
         } catch (Exception ex) {
             log.error(ex);
         }
-
         categories.setCategoriesItems(categoriesList);
 
         return categories;
@@ -119,8 +122,8 @@ public class RecipeScrape {
      * @param categoryNameParam
      * @return
      */
-    public Category scrapeByCategoryName(String categoryNameParam) {
-        String url = "https://damndelicious.net/category/" + categoryNameParam + "/";
+    public Category scrapeByCategoryName(String urlToCatergory, String categoryNameParam) {
+        String url = urlToCatergory;
 
         Category category = new Category();
         ArrayList<Recipe> recipeList = new ArrayList<>();
@@ -128,10 +131,18 @@ public class RecipeScrape {
         try {
             final Document categoryPage = Jsoup.connect(url).get();
 
-            for (Element item : categoryPage.select("div.archive-post h4.title")) {
+            for (Element item : categoryPage.select("div.archive-post a")) {
                 if (item.text().equals("")) {
                     continue;
                 } else {
+                    //Recipe Name
+                    String recipeName = item.select("h4.title").text();
+
+                    //Recipe Link
+                    String urlToEachRecipe = item.attr("abs:href");
+
+                    log.info("\n\nName: " + recipeName + " ---- url: " + urlToEachRecipe);
+
                     Recipe recipe = new Recipe();
                     recipe.setName(item.text());
                     recipeList.add(recipe);

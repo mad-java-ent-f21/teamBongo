@@ -17,7 +17,7 @@ public class RecipeScrapeTest {
         RecipeScrape recipeScrape = new RecipeScrape();
         ArrayList<String> titleList = new ArrayList<>();
 
-        titleList = recipeScrape.titleScrape();
+        titleList = recipeScrape.scrapeTitleInfo();
 
         for (String item : titleList) {
             log.info(item);
@@ -58,7 +58,7 @@ public class RecipeScrapeTest {
 
         Category results;
 
-        results = scraper.scrapeByCategoryName("asian-inspired");
+        results = scraper.scrapeByCategoryName("https://damndelicious.net/category/asian-inspired/" ,"asian-inspired");
 
         for (Recipe item : results.getRecipes()) {
             log.info(item);
