@@ -57,11 +57,11 @@ public class RecipeScrapeTest {
     public void scrapeAllCategoriesTest() {
         RecipeScrape categories = new RecipeScrape();
 
-        Categories results;
+        ArrayList<Category> results;
 
         results = categories.scrapeAllCategories();
 
-        for (Category item : results.getCategoriesItems()) {
+        for (Category item : results) {
             log.info(item);
         }
 

@@ -24,8 +24,8 @@ public class CategoriesResponse {
         //Instantiate a RecipeScape object
         RecipeScrape scraper = new RecipeScrape();
 
-        //Create Categories object
-        Categories categories = scraper.scrapeAllCategories();
+        //Create a list for all categories
+        ArrayList<Category> categories = scraper.scrapeAllCategories();
 
         //Create an object mapper so that we can make a JSON string
         ObjectMapper objectMapper = new ObjectMapper();

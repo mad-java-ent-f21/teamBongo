@@ -12,7 +12,7 @@ Website Chosen: [damndelicouse.net](damndelicious.net)
 This service will do the following:
 - Get a single recipe in the form of JSON.
 - Get all recipes in the form of JSON.
-- Get a list of recipes based on food type.
+- Get a list of recipes based on a category.
 - Get a list of recipes based on serving size.
 - Get a list of recipes based on preptime.
 

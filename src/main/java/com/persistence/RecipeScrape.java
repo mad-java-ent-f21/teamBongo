@@ -11,6 +11,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Log4j2
 public class RecipeScrape {
@@ -123,13 +124,12 @@ public class RecipeScrape {
     }
 
     /**
-     *
-     * @return
+     * This method scrapes for all categories and all recipes for each category.
+     * @return ArrayList of Category objects
      */
-    public Categories scrapeAllCategories() {
+    public ArrayList<Category> scrapeAllCategories() {
         String url = "https://damndelicious.net/recipe-index/";
 
-        Categories categories = new Categories();
         ArrayList<Category> categoriesList = new ArrayList();
 
         try {
@@ -154,14 +154,16 @@ public class RecipeScrape {
         } catch (Exception ex) {
             log.error(ex);
         }
-        categories.setCategoriesItems(categoriesList);
 
-        return categories;
+        return categoriesList;
     }
 
     /**
-     * @param
-     * @return
+     * This method takes in a specific url for a category and the number of pages to scrape, then returns a Category
+     * object.
+     * @param url
+     * @param numberOfPagesToScrape
+     * @return Category Object
      */
     public Category scrapeByCategoryName(String url, int numberOfPagesToScrape) {
 
