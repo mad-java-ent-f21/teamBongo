@@ -73,7 +73,7 @@ public class RecipeScrapeTest {
 
         Category results;
 
-        results = scraper.scrapeByCategoryName("https://damndelicious.net/category/asian-inspired/", 1);
+        results = scraper.scrapeByCategoryName("https://damndelicious.net/category/christmas/", 10);
 
         for (Recipe item : results.getRecipes()) {
             log.info(item);

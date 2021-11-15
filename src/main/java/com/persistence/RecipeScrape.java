@@ -145,7 +145,7 @@ public class RecipeScrape {
                     String urlToEachCategory = item.attr("abs:href");
 
                     //Calls the method that scrapes the index of the individual Catergories.
-                    Category category = scrapeByCategoryName(urlToEachCategory, 1);
+                    Category category = scrapeByCategoryName(urlToEachCategory, 100);
 
                     categoriesList.add(category);
                 }
@@ -176,7 +176,7 @@ public class RecipeScrape {
             log.error(ex);
         }
 
-        //Code used to scrpae more than one page. counter goes up by one.
+        //Code used to scrpe more than one page. counter goes up by one and it'll move on to the next page.
         int counter = 1;
         String baseUrl = url + "/page/";
 
@@ -209,6 +209,7 @@ public class RecipeScrape {
                 }
             } catch (Exception ex) {
                 log.error(ex);
+                counter = 1000;
             }
             counter++;
         }
