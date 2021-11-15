@@ -70,6 +70,7 @@ public class RecipeScrape {
 
     /**
      * This class scrapes the ingredients and enters them into a list.
+     * @param url
      * @return ingredients
      */
 
