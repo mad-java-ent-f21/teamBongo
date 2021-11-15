@@ -51,9 +51,7 @@ public class RecipeGenerator {
 
         //SET rest of Recipe Instance Variables
         Recipe recipe1 = new Recipe();
-        recipe1.setId(1);
         recipe1.setName("Instant Pot Chicken Nachos");
-        recipe1.setCategory("Appetizers");
         recipe1.setYield("8 servings");
         recipe1.setPrepTime("20 Minutes");
         recipe1.setCookTime("60 Minutes");
@@ -94,9 +92,7 @@ public class RecipeGenerator {
         step2.setStepsItems(steps2);
 
         Recipe recipe2 = new Recipe();
-        recipe2.setId(2);
         recipe2.setName("HONEY LIME SHRIMP");
-        recipe2.setCategory("Appetizers");
         recipe2.setYield("4 SERVINGS");
         recipe2.setPrepTime("10 Minutes");
         recipe2.setCookTime("10 Minutes");
@@ -138,9 +134,7 @@ public class RecipeGenerator {
         step2.setStepsItems(steps3);
 
         Recipe recipe3 = new Recipe();
-        recipe3.setId(3);
         recipe3.setName("PUMPKIN DONUT HOLES");
-        recipe2.setCategory("Breakfast");
         recipe3.setYield("24 MINI MUFFINS");
         recipe3.setPrepTime("20 Minutes");
         recipe3.setCookTime("15 Minutes");

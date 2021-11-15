@@ -14,7 +14,6 @@ import java.util.ArrayList;
 
 @Log4j2
 public class RecipeScrape {
-
     /**
      *
      *
@@ -43,8 +42,8 @@ public class RecipeScrape {
             log.error(ex);
         }
 
-        if (titleList.isEmpty()) {
-            log.info("Skipped Recipe");
+        if (titleList.size() < 4) {
+
         } else {
 
             Recipe recipe = new Recipe();
@@ -145,8 +144,8 @@ public class RecipeScrape {
                     //Gets the URL to each category
                     String urlToEachCategory = item.attr("abs:href");
 
-                    //Calls the method that crapes the index of the individual Catergories.
-                    Category category = scrapeByCategoryName(urlToEachCategory, catergoryName);
+                    //Calls the method that scrapes the index of the individual Catergories.
+                    Category category = scrapeByCategoryName(urlToEachCategory, 1);
 
                     categoriesList.add(category);
                 }
@@ -160,44 +159,62 @@ public class RecipeScrape {
     }
 
     /**
-     *
-     * @param categoryNameParam
+     * @param
      * @return
      */
-    public Category scrapeByCategoryName(String urlToCatergory, String categoryNameParam) {
-        String url = urlToCatergory;
+    public Category scrapeByCategoryName(String url, int numberOfPagesToScrape) {
 
         Category category = new Category();
         ArrayList<Recipe> recipeList = new ArrayList<>();
+        String categoryName = "";
 
+        //Code block below scapes the title for the category type.
         try {
-            final Document categoryPage = Jsoup.connect(url).get();
+            categoryName = Jsoup.connect(url).get().select("h1.archivetitle").text();
 
-            for (Element item : categoryPage.select("div.archive-post a")) {
-                if (item.text().equals("")) {
-                    continue;
-                } else {
-                    //Recipe Name
-                    String recipeName = item.select("h4.title").text();
-
-                    //Recipe Link
-                    String urlToEachRecipe = item.attr("abs:href");
-
-                    Recipe recipe = scrapeRecipe(urlToEachRecipe);
-
-                    if (recipe == null) {
-                        log.info("Skipped");
-                        continue;
-                    } else {
-                        recipeList.add(recipe);
-                    }
-                }
-            }
         } catch (Exception ex) {
             log.error(ex);
         }
 
-        category.setName(categoryNameParam);
+        //Code used to scrpae more than one page. counter goes up by one.
+        int counter = 1;
+        String baseUrl = url + "/page/";
+
+        while (counter <= numberOfPagesToScrape ) {
+            url = baseUrl + counter;
+
+            try {
+                final Document categoryPage = Jsoup.connect(url).get();
+
+                for (Element item : categoryPage.select("div.archive-post a")) {
+                    if (item.text().equals("")) {
+                        continue;
+                    } else {
+                        //Recipe Name
+                        String recipeName = item.select("h4.title").text();
+
+                        //Recipe Link
+                        String urlToEachRecipe = item.attr("abs:href");
+
+                        Recipe recipe = scrapeRecipe(urlToEachRecipe);
+
+                        if (recipe == null) {
+                            log.info("Recipe Skipped");
+                            continue;
+                        } else {
+                            log.info("Recipe Added -- " + recipe.getName());
+                            recipeList.add(recipe);
+                        }
+                    }
+                }
+            } catch (Exception ex) {
+                log.error(ex);
+            }
+            counter++;
+        }
+
+        log.info(categoryName + " - Finished Scraping");
+        category.setName(categoryName);
         category.setRecipes(recipeList);
         return category;
     }

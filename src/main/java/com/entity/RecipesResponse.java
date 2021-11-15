@@ -35,7 +35,7 @@ public class RecipesResponse {
         List<Recipe> recipes = recipeGenerator.createRecipes();
         Recipe recipeToOutput = null;
         for(Recipe recipe : recipes) {
-            if (recipe.getCategory() == "Appetizers") {
+            if (recipe.getName() == "Appetizers") {
                 recipeToOutput = recipe;
             }
         }

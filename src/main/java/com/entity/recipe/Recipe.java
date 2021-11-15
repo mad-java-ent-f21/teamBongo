@@ -6,14 +6,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Recipe {
 
-    @JsonProperty("id")
-    private int id;
-
     @JsonProperty("name")
     private String name;
-
-    @JsonProperty("category")
-    private String category;
 
     @JsonProperty("yield")
     private String yield;
@@ -30,15 +24,6 @@ public class Recipe {
     @JsonProperty("steps")
     private Steps steps;
 
-    //ID: GET and SET
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getId() {
-        return this.id;
-    }
-
     //NAME: GET and SET
     public void setName(String name) {
         this.name = name;
@@ -47,11 +32,6 @@ public class Recipe {
     public String getName() {
         return this.name;
     }
-
-    //CATEGORY: GET and SET
-    public void setCategory(String category) { this.category = category; }
-
-    public String getCategory() { return this.category; }
 
     //SERVING SIZE: GET and SET
     public void setYield(String servingSize) {
@@ -98,9 +78,7 @@ public class Recipe {
     public String toString() {
         return
                 "Recipe{" +
-                        "id = '" + id + '\'' +
-                        ", name = '" + name + '\'' +
-                        ", category = '" + category + '\'' +
+                        "name = '" + name + '\'' +
                         ", yield = '" + yield + '\'' +
                         ", prep_time = '" + prepTime + '\'' +
                         ", cook_time = '" + cookTime + '\'' +

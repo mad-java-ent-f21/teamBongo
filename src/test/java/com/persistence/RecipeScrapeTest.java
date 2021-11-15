@@ -12,17 +12,6 @@ import java.util.ArrayList;
 @Log4j2
 public class RecipeScrapeTest {
 
-    @Test
-    public void scrapeDynamicRecipe() {
-        RecipeScrape recipeScrape = new RecipeScrape();
-
-        Recipe recipe = new Recipe();
-
-        recipe = recipeScrape.scrapeRecipe("https://damndelicious.net/2019/02/01/freezer-green-smoothie-packs/");
-
-        log.info(recipe);
-    }
-
 
     @Test
     public void scrapeRecipe() {
@@ -30,7 +19,7 @@ public class RecipeScrapeTest {
 
         Recipe recipe = new Recipe();
 
-        recipe = recipeScrape.scrapeRecipe("https://damndelicious.net/2021/10/16/thai-coconut-curry-ramen/");
+        recipe = recipeScrape.scrapeRecipe("https://damndelicious.net/2020/08/17/one-pot-chicken-and-mushroom-orzo/");
 
         log.info(recipe);
     }
@@ -84,7 +73,7 @@ public class RecipeScrapeTest {
 
         Category results;
 
-        results = scraper.scrapeByCategoryName("https://damndelicious.net/category/asian-inspired/" ,"asian-inspired");
+        results = scraper.scrapeByCategoryName("https://damndelicious.net/category/asian-inspired/", 1);
 
         for (Recipe item : results.getRecipes()) {
             log.info(item);
