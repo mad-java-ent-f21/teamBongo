@@ -145,7 +145,7 @@ public class RecipeScrape {
                     String urlToEachCategory = item.attr("abs:href");
 
                     //Calls the method that scrapes the index of the individual Catergories.
-                    Category category = scrapeByCategoryName(urlToEachCategory, 100);
+                    Category category = scrapeByCategoryName(urlToEachCategory, 1);
 
                     categoriesList.add(category);
                 }
