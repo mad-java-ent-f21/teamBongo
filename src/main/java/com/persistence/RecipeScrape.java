@@ -21,8 +21,6 @@ public class RecipeScrape {
      */
     public Recipe scrapeRecipe(String url) {
 
-        url = url + "/print/";
-
         ArrayList<String> titleList = new ArrayList();
         ArrayList<String> ingredientsArrayList = new ArrayList<>();
         ArrayList<String> stepsArrayList = new ArrayList<>();
@@ -35,36 +33,40 @@ public class RecipeScrape {
             final Document recipePage = Jsoup.connect(url).get();
 
             for (Element titleItem : recipePage.select("div.recipe-title")) {
-                name = titleItem.select("h2").text();
+                    name = titleItem.select("h2").text();
             }
 
             for (Element titleItem : recipePage.select("div.post-meta.time p")) {
-                titleList.add(titleItem.select("span").text());
+                    titleList.add(titleItem.select("span").text());
             }
-
         } catch (Exception ex){
             log.error(ex);
         }
 
-        Recipe recipe = new Recipe();
-        Ingredients ingredients = new Ingredients();
-        Steps steps = new Steps();
+        if (titleList.isEmpty()) {
+            log.info("Skipped Recipe");
+        } else {
 
-        ingredientsArrayList = this.scrapeIngredients(url);
-        ingredients.setIngredientItems(ingredientsArrayList);
+            Recipe recipe = new Recipe();
+            Ingredients ingredients = new Ingredients();
+            Steps steps = new Steps();
 
-        stepsArrayList = this.scrapeSteps(url);
-        steps.setStepsItems(stepsArrayList);
+            ingredientsArrayList = this.scrapeIngredients(url);
+            ingredients.setIngredientItems(ingredientsArrayList);
 
-        recipe.setName(name);
-        recipe.setYield(titleList.get(0));
-        recipe.setPrepTime(titleList.get(1));
-        recipe.setCookTime(titleList.get(2));
-        recipe.setIngredients(ingredients);
-        recipe.setSteps(steps);
+            stepsArrayList = this.scrapeSteps(url);
+            steps.setStepsItems(stepsArrayList);
 
-        return recipe;
+            recipe.setName(name);
+            recipe.setYield(titleList.get(0));
+            recipe.setPrepTime(titleList.get(1));
+            recipe.setCookTime(titleList.get(2));
+            recipe.setIngredients(ingredients);
+            recipe.setSteps(steps);
 
+            return recipe;
+        }
+        return null;
     }
 
     /**
@@ -183,7 +185,12 @@ public class RecipeScrape {
 
                     Recipe recipe = scrapeRecipe(urlToEachRecipe);
 
-                    recipeList.add(recipe);
+                    if (recipe == null) {
+                        log.info("Skipped");
+                        continue;
+                    } else {
+                        recipeList.add(recipe);
+                    }
                 }
             }
         } catch (Exception ex) {

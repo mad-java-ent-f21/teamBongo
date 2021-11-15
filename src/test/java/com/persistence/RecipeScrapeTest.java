@@ -13,12 +13,24 @@ import java.util.ArrayList;
 public class RecipeScrapeTest {
 
     @Test
+    public void scrapeDynamicRecipe() {
+        RecipeScrape recipeScrape = new RecipeScrape();
+
+        Recipe recipe = new Recipe();
+
+        recipe = recipeScrape.scrapeRecipe("https://damndelicious.net/2019/02/01/freezer-green-smoothie-packs/");
+
+        log.info(recipe);
+    }
+
+
+    @Test
     public void scrapeRecipe() {
         RecipeScrape recipeScrape = new RecipeScrape();
 
         Recipe recipe = new Recipe();
 
-        recipe = recipeScrape.scrapeRecipe("https://damndelicious.net/2021/10/16/thai-coconut-curry-ramen/print/");
+        recipe = recipeScrape.scrapeRecipe("https://damndelicious.net/2021/10/16/thai-coconut-curry-ramen/");
 
         log.info(recipe);
     }
@@ -72,7 +84,7 @@ public class RecipeScrapeTest {
 
         Category results;
 
-        results = scraper.scrapeByCategoryName("https://damndelicious.net/category/asian-inspired/page/2" ,"asian-inspired");
+        results = scraper.scrapeByCategoryName("https://damndelicious.net/category/asian-inspired/" ,"asian-inspired");
 
         for (Recipe item : results.getRecipes()) {
             log.info(item);
