@@ -68,9 +68,7 @@ public class RecipeScrape {
         } else {
             return null;
         }
-
     }
-
     /**
      * This class scrapes the ingredients and enters them into a list.
      * @param url url of the recipe we are scraping.
