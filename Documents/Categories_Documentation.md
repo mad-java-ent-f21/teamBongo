@@ -23,5 +23,35 @@ Example JSON output:<br>
 
 ### Step 1 : Save Response to .json file
 
+![step 1](database-import-step-by-step/step1.png)
+
+### Step 2 : Create New Schema
+
+![Step 2](database-import-step-by-step/step2.png)
+
+### Step 3 : Browse and find the .json file
+
+HINT: Right click on schema and choose 'Table Data Import Wizard'
+
+![Step 3](database-import-step-by-step/step3.png)
+
+### Step 4 : Name the table
+
+![Step 4](database-import-step-by-step/step4.png)
+
+### Step 5 : Select desired Columns to map
+
+![Step 5](database-import-step-by-step/step5.png)
+
+### Step 6 : Finish Import and examine the new table
+
+![Step 6_1](database-import-step-by-step/step6_1.png)
+<br>
+
+![Step 6_2](database-import-step-by-step/step6_2.png)
+<br>
+
+![Step 6_3](database-import-step-by-step/step6_3.png)
+
 
 

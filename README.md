@@ -16,6 +16,9 @@ This service will do the following:
 - Get a list of recipes based on serving size.
 - Get a list of recipes based on preptime.
 
+## Documentation
+- [By Categories Documentation](Documents/Categories_Documentation.md)
+
 ## Technologies Used
 
 | Name  | Technology    |
@@ -46,5 +49,4 @@ This service will do the following:
 ## Team Docs 
 - [Link to Team Charter](https://github.com/mad-java-ent-f21/teamBongo/blob/main/Documents/Charter.md)
 - [Link to Team Resume](https://github.com/mad-java-ent-f21/teamBongo/blob/main/Documents/Resume.md)
-- Link to Design Documents
 - Other Links
