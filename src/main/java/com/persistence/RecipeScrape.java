@@ -43,9 +43,7 @@ public class RecipeScrape {
             log.error(ex);
         }
 
-        if (titleList.size() < 4) {
-
-        } else {
+        if (titleList.size() == 4) {
 
             Recipe recipe = new Recipe();
             Ingredients ingredients = new Ingredients();
@@ -65,8 +63,11 @@ public class RecipeScrape {
             recipe.setSteps(steps);
 
             return recipe;
+        } else {
+
+            return null;
         }
-        return null;
+
     }
 
     /**

@@ -19,7 +19,7 @@ public class RecipeScrapeTest {
 
         Recipe recipe = new Recipe();
 
-        recipe = recipeScrape.scrapeRecipe("https://damndelicious.net/2020/08/17/one-pot-chicken-and-mushroom-orzo/");
+        recipe = recipeScrape.scrapeRecipe("https://damndelicious.net/2021/10/21/pumpkin-donut-holes/");
 
         log.info(recipe);
     }
