@@ -15,6 +15,7 @@ import java.util.List;
 
 @Log4j2
 public class RecipeScrape {
+
     /**
      *
      *
@@ -32,9 +33,7 @@ public class RecipeScrape {
         try {
             final Document recipePage = Jsoup.connect(url).get();
 
-            for (Element titleItem : recipePage.select("div.recipe-title")) {
-                    name = titleItem.select("h2").text();
-            }
+            name = recipePage.select("div.recipe-title h2").text();
 
             for (Element titleItem : recipePage.select("div.post-meta.time p")) {
                     titleList.add(titleItem.select("span").text());
@@ -64,7 +63,6 @@ public class RecipeScrape {
 
             return recipe;
         } else {
-
             return null;
         }
 
