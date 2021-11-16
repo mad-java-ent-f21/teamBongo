@@ -17,8 +17,11 @@ import java.util.List;
 public class RecipeScrape {
 
     /**
-     *
-     *
+     * checks recipe and scrapes relevant information like title info, ingredients, and directions.
+     * If recipe doens't conform and can't be scraped properly, will return a null.
+     * @param url url of recipe page
+     * @return returns recipe with title info, ingredients, and steps (directions)
+     * @return null if recipe doesn't conform, returns null.
      */
     public Recipe scrapeRecipe(String url) {
 
@@ -70,10 +73,9 @@ public class RecipeScrape {
 
     /**
      * This class scrapes the ingredients and enters them into a list.
-     * @param url
+     * @param url url of the recipe we are scraping.
      * @return ingredients
      */
-
     public ArrayList<String> scrapeIngredients(String url) {
 
         ArrayList<String> ingredientItems = new ArrayList();
@@ -99,7 +101,8 @@ public class RecipeScrape {
 
     /**
      *
-     *
+     * @param url url of the recipe we are scraping
+     * @return returns the steps(directions) the form of an arrayList.
      */
     public ArrayList<String> scrapeSteps(String url) {
         ArrayList<String> stepItems = new ArrayList();
@@ -160,7 +163,7 @@ public class RecipeScrape {
     /**
      * This method takes in a specific url for a category and the number of pages to scrape, then returns a Category
      * object.
-     * @param url
+     * @param url url of the recipe page we are scraping.
      * @param numberOfPagesToScrape
      * @return Category Object
      */
@@ -169,6 +172,12 @@ public class RecipeScrape {
         Category category = new Category();
         ArrayList<Recipe> recipeList = new ArrayList<>();
         String categoryName = "";
+
+        if (numberOfPagesToScrape > 100) {
+            numberOfPagesToScrape = 100;
+        } if (numberOfPagesToScrape < 0) {
+            numberOfPagesToScrape = 0;
+        }
 
         //Code block below scapes the title for the category type.
         try {
@@ -211,7 +220,7 @@ public class RecipeScrape {
                 }
             } catch (Exception ex) {
                 log.error(ex);
-                counter = 1000;
+                counter = 100;
             }
             counter++;
         }
