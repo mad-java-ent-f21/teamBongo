@@ -1,26 +1,43 @@
 <html>
 <body>
-<h2>Recipe Scrapper</h2>
-<h3>Get By Categories Documentation</h3>
-<p> - Retrieval time ~ 10-40 minutes (depending on how many pages are chosen for scraping)</p>
-<p> - Usage: Database Storage</p>
-<p> - Responses: 2 types </p>
-<p> - Responses: 2 types
-    - .../services/categories/
-    - ALL Categories and corresponding recipes
-    - .../services/categories/{category-name-parameter}
-    - ONE category and corresponding recipes</p>
-<p>Although this method of data retrieval takes several minutes to process, the main application for it is to easily create
-    JSON output that can be saved to a .json file that is then used to create database tables filled with rows of data.  The following two use cases are detailed below and example JSON is provided.
-</p>
-<p>At the bottom of this document is a step-by-step tutorial that uses a response to map/populate a database in MySql Workbench
+<h1>Recipe Scraper</h1>
+<section>
+    <h2>Get By Categories Documentation</h2>
+    <p> - Retrieval time ~ 10-40 minutes (depending on how many pages are chosen for scraping)</p>
+    <p> - Usage: Database Storage</p>
+    <p>
+        <b>NOTE:</b> Although this method of data retrieval takes several minutes to process, the main application for it is to easily
+        create JSON output that can be saved to a .json file that is then used to create database tables filled with rows of
+        data.  The following two use cases are detailed below and example JSON is provided.
+    </p>
+</section>
+<br>
+<section>
+    <h3> Responses: 2 types </h3>
+    <p>
+        <b>1.</b>  .../services/categories/ <br>
+        ALL Categories and corresponding recipes
+        <br>
+        <br>
+        <b>2.</b>  .../services/categories/{category-name-parameter} <br>
+        ONE category and corresponding recipes
+    </p>
+</section>
+
+<br>
+
+<p style="font-size: 18px;">
+    <b>*Below is a step-by-step tutorial that uses a response to map/populate a database in MySql Workbench*</b>
 </p>
 
 <br />
 
-<h3>Example JSON output:</h3>
+<h3>Example JSON output</h3>
 
 <img src="category-by-all.png" alt="category-by-all" width="500" height="600">
+
+<br>
+<hr>
 
 <h3>Instructions to import JSON response into MySql Workbench</h3>
 
