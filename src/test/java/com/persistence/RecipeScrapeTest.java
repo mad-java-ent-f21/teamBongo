@@ -6,6 +6,7 @@ import com.entity.recipe.Recipe;
 import junit.framework.TestCase;
 import lombok.extern.log4j.Log4j2;
 import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
 
@@ -21,7 +22,9 @@ public class RecipeScrapeTest {
 
         recipe = recipeScrape.scrapeRecipe("https://damndelicious.net/2021/10/21/pumpkin-donut-holes/");
 
-        log.info(recipe);
+        assertEquals("Pumpkin Donut Holes", recipe.getName());
+
+        //log.info(recipe);
     }
 
     @Test
