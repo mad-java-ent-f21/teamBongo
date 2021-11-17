@@ -1,0 +1,15 @@
+Boulder:
+I started out the week by creating the classes that would handle the URI mapping and responses (CategoriesResponse, RecipesResponse).
+I also created entity classes for recipes and categories in order to map the scraped information to JSON objects and
+then dish those up to the user when the URI is called.
+
+I created tests for scraping by Categories and Category names and made sure they were passing.  After all tests passed,
+I de-hard-coded both CategoriesResponse and RecipesResponse to incorporate Matt's RecipeScraper Class.
+
+I finished up the week by creating the documentation for the Get By Categories use cases, and I also made a step by step guide
+on how to map the JSON response to a MySql database in Workbench.
+
+Boulder's Findings: This was my first time using a web scraper and building a web service, and I have to say that it was
+a lot of fun and eye-opening as to how powerful (and slow) web scrapers can be.  The main difficulty I had was deciding
+how I wanted to map the URIs and getting the JSON POJOs set up correctly took some trial and error, but I didn't hit any
+major blockers during this project so I'm very pleased with how the project went.
