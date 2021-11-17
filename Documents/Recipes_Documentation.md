@@ -20,4 +20,4 @@ Usage Example and JSON output: <br>
 
 #### JSON Output
 
-![example JSON output](recipe_output_JSON.png)
+![example JSON output](recipe_output_JSON.PNG)
