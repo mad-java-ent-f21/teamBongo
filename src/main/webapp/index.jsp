@@ -60,7 +60,7 @@
 
 <h3>Example JSON output</h3>
 
-<img src="category-by-all.png" alt="category-by-all" width="500" height="600">
+<img src="category-by-all.png" alt="category-by-all" width="auto" height="600">
 
 <br>
 
@@ -69,36 +69,36 @@
 
     <h4>Step 1 : Save Response to .json file</h4>
 
-    <img src="database-import-step-by-step/step1.png" alt="step1" width="500" height="600">
+    <img src="database-import-step-by-step/step1.png" alt="step1" width="auto" height="600">
 
     <h4>Step 2 : Create New Schema</h4>
 
-    <img src="database-import-step-by-step/step2.png" alt="step2" width="500" height="600">
+    <img src="database-import-step-by-step/step2.png" alt="step2" width="auto" height="600">
 
     <h4>Step 3 : Browse and find the .json file</h4>
 
-    <img src="database-import-step-by-step/step3.png" alt="step3" width="500" height="600">
+    <img src="database-import-step-by-step/step3.png" alt="step3" width="auto" height="600">
 
     <h4>Step 3 : Browse and find the .json file</h4>
     <p>HINT: Right click on schema and choose 'Table Data Import Wizard'</p>
 
-    <img src="database-import-step-by-step/step3.png" alt="step3" width="500" height="600">
+    <img src="database-import-step-by-step/step3.png" alt="step3" width="auto" height="600">
 
     <h4>Step 4 : Name the table</h4>
 
-    <img src="database-import-step-by-step/step4.png" alt="step4" width="500" height="600">
+    <img src="database-import-step-by-step/step4.png" alt="step4" width="auto" height="600">
 
     <h4>Step 5 : Select desired Columns to map</h4>
 
-    <img src="database-import-step-by-step/step5.png" alt="step5" width="500" height="600">
+    <img src="database-import-step-by-step/step5.png" alt="step5" width="auto" height="600">
 
     <h4>Step 6 : Finish Import and examine the new table</h4>
 
-    <img src="database-import-step-by-step/step6_1.png" alt="step6_1" width="500" height="600">
+    <img src="database-import-step-by-step/step6_1.png" alt="step6_1" width="auto" height="600">
     <br />
-    <img src="database-import-step-by-step/step6_2.png" alt="step6_2" width="500" height="600">
+    <img src="database-import-step-by-step/step6_2.png" alt="step6_2" width="auto" height="600">
     <br />
-    <img src="database-import-step-by-step/step6_3.png" alt="step6_3" width="500" height="600">
+    <img src="database-import-step-by-step/step6_3.png" alt="step6_3" width="auto" height="600">
     <br />
 </section>
 
