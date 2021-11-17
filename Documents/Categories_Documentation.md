@@ -1,5 +1,5 @@
 # Get By Categories Documentation
-- Retrieval time ~ 10 minutes
+- Retrieval time ~ 10-40 minutes (**depending on how many pages are selected for scraping**)
 - Usage: Database Storage
 - Responses: 2 types 
   - .../services/categories/
@@ -8,7 +8,7 @@
     - ONE category and corresponding recipes
 
 
-Although this method of data retrieval takes several minutes to process, the main application for it is to easily create
+Although this method of data retrieval takes several minutes to process, the main purpose for it is to easily create
 JSON output that can be saved to a .json file that is then used to create database tables filled with rows of data.  The following two use cases are detailed below and example JSON is provided.  
 
 At the bottom of this document is a step-by-step tutorial that uses a response to map/populate a database in MySql Workbench

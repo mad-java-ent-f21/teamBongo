@@ -2,7 +2,7 @@
 <body>
 <h2>Recipe Scrapper</h2>
 <h3>Get By Categories Documentation</h3>
-<p> - Retrieval time ~ 10 minutes</p>
+<p> - Retrieval time ~ 10-40 minutes (depending on how many pages are chosen for scraping)</p>
 <p> - Usage: Database Storage</p>
 <p> - Responses: 2 types </p>
 <p> - Responses: 2 types
