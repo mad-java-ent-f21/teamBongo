@@ -13,10 +13,9 @@ This service will do the following:
 - Get a single recipe in the form of JSON.
 - Get all recipes in the form of JSON.
 - Get a list of recipes based on a category.
-- Get a list of recipes based on serving size.
-- Get a list of recipes based on preptime.
 
 ## Documentation
+- [By Recipe Name Documentation](Documents/Recipes_Documentation.md)
 - [By Categories Documentation](Documents/Categories_Documentation.md)
 
 ## Technologies Used
@@ -49,4 +48,3 @@ This service will do the following:
 ## Team Docs 
 - [Link to Team Charter](https://github.com/mad-java-ent-f21/teamBongo/blob/main/Documents/Charter.md)
 - [Link to Team Resume](https://github.com/mad-java-ent-f21/teamBongo/blob/main/Documents/Resume.md)
-- Other Links
