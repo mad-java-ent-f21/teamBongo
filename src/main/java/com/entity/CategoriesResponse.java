@@ -45,7 +45,7 @@ public class CategoriesResponse {
         RecipeScrape scraper = new RecipeScrape();
 
         //Create Categories object
-        Category category = scraper.scrapeByCategoryName("https://damndelicious.net/category/" + categoryParam + "/", 60);
+        Category category = scraper.scrapeByCategoryName("https://damndelicious.net/category/" + categoryParam + "/", 1);
 
         //Create an object mapper so that we can make a JSON string
         ObjectMapper objectMapper = new ObjectMapper();
