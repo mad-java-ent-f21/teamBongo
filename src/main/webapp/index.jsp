@@ -52,8 +52,11 @@
 <h4>Step 6 : Finish Import and examine the new table</h4>
 
 <img src="database-import-step-by-step/step6_1.png" alt="step6_1" width="500" height="600">
+<br />
 <img src="database-import-step-by-step/step6_2.png" alt="step6_2" width="500" height="600">
+<br />
 <img src="database-import-step-by-step/step6_3.png" alt="step6_3" width="500" height="600">
+<br />
 
 </body>
 </html>
